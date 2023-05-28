@@ -2,8 +2,14 @@
 
 - `.../`
     - `.backups/...` - requested backups will be placed in this folder by default
+    - [`members/...`](#members) - member files
     - [`config.json`](#configjson) - json file containing configuration
     - [`index.json`](#indexjson) - json file with file indexes vs their hashes
+
+
+### `members/...`
+
+sorry we were gonna write something here but my spoons ran out again
 
 ### `index.json`
 
@@ -17,6 +23,8 @@ In this event, Pluralsnug will list the affected files, and allow two options:
 - Creating a database backup and continuing
 - Ignoring and continuing
 
+After a command is completed, Pluralsnug will re-evaluate all affected files and update the index accordingly.
+
 ### `config.json`
 
 Planned config tags:
@@ -25,7 +33,7 @@ Planned config tags:
 - `Services` - List of Objects, Tracks the services that the user syncs between and related information. A list of valid
   services is as follows, with the tags that they allow. All objects have a `Service` tag equal to the name listed.
     - [`PluralKit`](https://pluralkit.me)
-        - `System` - String, The system's ID. Can be friendly 5 letter IDs or UUIDs
+        - `System` - String, The system's ID. Can be a friendly 5 letter ID or a UUID
         - `Token` - Optional String, The system's auth token. Ignored if `HasPasswords` is true. If absolutely no token
           is provided, the user will be warned about unexpected behaviour, and execution will continue as normal until a
           crash from unauthenticated actions is met
